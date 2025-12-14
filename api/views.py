@@ -12,6 +12,7 @@ from rest_framework import mixins, generics, viewsets
 from blogs.models import Blog, Comment
 from blogs.serializers import BlogSerializer, CommentSerializer 
 from .paginations import CustomPagination
+from employees.filters import EmployeeFilter
 
 
 # Functions based api view
@@ -210,6 +211,7 @@ class EmployeeViewset(viewsets.ModelViewSet):
     serializer_class = EmployeeSerializer
     pagination_class = CustomPagination
     filterset_fields = ['designation']
+    filterset_class = EmployeeFilter
     
 
 
